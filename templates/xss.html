@@ -1,0 +1,135 @@
+<html>
+    <head>
+        <title>XSS attack detection</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+        <style>
+            .body{
+                height: 100%;
+                width: 100%;
+                font-family: 'Poppins', sans-serif;
+                background-color: #112B3C;
+                color: #EFEFEF;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+            .main{
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
+            .title1{
+                
+                font-size: 40;
+            }
+            .form1{
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                justify-content: center;
+            
+            }
+            
+            .liste{
+                padding: 10px;
+                font-size: 16;
+                margin-bottom: 25px;
+                margin: auto;
+                margin-bottom: 30px;
+                background-color: #205375;
+                border-width: 0px;
+                border-radius: 15px;
+                color: #EFEFEF;
+                width: 480px; 
+                
+            }
+            
+            .input{
+                padding: 10px;
+                font-size: 16;
+                margin-bottom: 25px;
+                margin: auto;
+                margin-bottom: 30px;
+                background-color: #205375;
+                border-width: 0px;
+                border-radius: 15px;
+                color: #EFEFEF;
+                width: 480px; 
+                
+            }
+            .button{
+                font-size: 20;
+                font-weight: bold;
+                border-radius: 20px;
+                border-width: 0px;
+                margin: auto;
+                margin-bottom: 35px;
+                padding-left: 30px;
+                padding-right: 30px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                background-color: #F66B0E;
+                color:#EFEFEF;
+                cursor: pointer;
+                transition-duration: .2;
+            
+            
+            }
+            .button:hover{
+                background-color: #112B3C;
+                color: #F66B0E;
+                box-shadow: 0 0 4px #F66B0E;
+            }
+            .div{
+                display: flex;
+                flex-direction: row;
+                margin: auto;
+                align-items: center;
+            }
+            .title2{
+                margin-right: 15px;
+            }
+            .output{
+                font-size: 20;
+                background-color: #205375;
+                border-radius: 15px;
+                padding: 7px;
+            }
+            .output1{
+                font-size: 20;
+                background-color: #205375;
+                border-radius: 15px;
+                padding: 7px;
+            }
+        </style>
+    </head>
+
+    <body class="body">
+        <div class="main">
+            <h2 class="title1">XSS Attack Detection</h2>
+            <form class="form1" name="form", method="POST" >
+                    <input class="input" type="text" name="tp", placeholder="Text Payload" required/>
+                    <p style="font-size: 20;">Select a model :</p>
+                    <select class="liste" name="model" size="1">
+                        <option>Decision tree
+                        <option>Random Forest
+                        <option selected>SVM
+                        <option>Logistic Regression
+                        <option>MLP classifier
+                        <option>SGD classifier
+                    </select>
+                    <button class="button" role="button" value="Submit">Test</button>
+                    <div class="div">
+                        <h2 class="title2">Result:</h2>
+                        <p class="output">{{ output }}<p>
+                    </div>
+                    <div class="div">
+                        <h2 class="title2">Model:</h2>
+                        <p class="output1">{{ model }}</p>
+                    </div>
+            </form>        
+        </div>
+    </body><html>
+
